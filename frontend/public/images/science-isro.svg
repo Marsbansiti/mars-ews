@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050814"/>
+      <stop offset="50%" stop-color="#0b1736"/>
+      <stop offset="100%" stop-color="#182348"/>
+    </linearGradient>
+    <linearGradient id="rocket" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e2e8f0"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+    <linearGradient id="flame" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="30%" stop-color="#f59e0b"/>
+      <stop offset="70%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#7f1d1d" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="earth" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="60%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#064e3b"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="15" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg)"/>
+
+  <!-- Stars -->
+  <g fill="#ffffff" opacity="0.6">
+    <circle cx="120" cy="80" r="1.5"/>
+    <circle cx="250" cy="140" r="1"/>
+    <circle cx="380" cy="60" r="2"/>
+    <circle cx="490" cy="180" r="1.5"/>
+    <circle cx="720" cy="90" r="2"/>
+    <circle cx="850" cy="160" r="1"/>
+    <circle cx="980" cy="70" r="2.5"/>
+    <circle cx="1100" cy="130" r="1.5"/>
+    <circle cx="180" cy="280" r="2"/>
+    <circle cx="320" cy="340" r="1"/>
+    <circle cx="920" cy="290" r="1.5"/>
+    <circle cx="1040" cy="360" r="2"/>
+  </g>
+
+  <!-- Earth Limb -->
+  <circle cx="600" cy="980" r="620" fill="url(#earth)" opacity="0.85"/>
+  <circle cx="600" cy="980" r="622" fill="none" stroke="#38bdf8" stroke-width="4" opacity="0.4" filter="url(#glow)"/>
+
+  <!-- Orbital Trajectory -->
+  <path d="M 150 500 Q 600 120 1080 320" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="6,6" opacity="0.6"/>
+
+  <!-- Satellite in Orbit -->
+  <g transform="translate(900, 260) rotate(25)">
+    <!-- Satellite Body -->
+    <rect x="-35" y="-25" width="70" height="50" rx="6" fill="#475569" stroke="#94a3b8" stroke-width="2"/>
+    <rect x="-25" y="-18" width="50" height="36" fill="#f8fafc" opacity="0.9"/>
+    <!-- Solar Panels -->
+    <rect x="-140" y="-15" width="95" height="30" rx="3" fill="#0284c7" stroke="#38bdf8" stroke-width="1.5"/>
+    <line x1="-92" y1="-15" x2="-92" y2="15" stroke="#38bdf8" stroke-width="1"/>
+    <line x1="-45" y1="-15" x2="-45" y2="15" stroke="#38bdf8" stroke-width="1"/>
+    <rect x="45" y="-15" width="95" height="30" rx="3" fill="#0284c7" stroke="#38bdf8" stroke-width="1.5"/>
+    <line x1="92" y1="-15" x2="92" y2="15" stroke="#38bdf8" stroke-width="1"/>
+    <!-- Dish Antenna -->
+    <path d="M 0 -25 Q 15 -45 35 -38" fill="none" stroke="#e2e8f0" stroke-width="2.5"/>
+    <circle cx="35" cy="-38" r="8" fill="#cbd5e1" opacity="0.8"/>
+  </g>
+
+  <!-- GSLV / ISRO Heavy Rocket -->
+  <g transform="translate(420, 200) rotate(-32)">
+    <!-- Exhaust Plume -->
+    <polygon points="-25,180 25,180 0,380" fill="url(#flame)" filter="url(#glow)"/>
+    <polygon points="-12,180 12,180 0,280" fill="#fff" opacity="0.9"/>
+    <!-- Boosters -->
+    <rect x="-42" y="80" width="18" height="100" rx="5" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5"/>
+    <polygon points="-42,80 -33,55 -24,80" fill="#e2e8f0"/>
+    <rect x="24" y="80" width="18" height="100" rx="5" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5"/>
+    <polygon points="24,80 33,55 42,80" fill="#e2e8f0"/>
+    <!-- Core Stage -->
+    <rect x="-24" y="20" width="48" height="160" rx="4" fill="url(#rocket)"/>
+    <!-- Payload Fairing -->
+    <path d="M -24,20 Q -24,-60 0,-90 Q 24,-60 24,20 Z" fill="url(#rocket)"/>
+    <!-- Tricolor Flag Band -->
+    <rect x="-24" y="50" width="48" height="6" fill="#f97316"/>
+    <rect x="-24" y="56" width="48" height="6" fill="#ffffff"/>
+    <rect x="-24" y="62" width="48" height="6" fill="#16a34a"/>
+    <!-- Emblem -->
+    <text x="0" y="95" fill="#0f172a" font-family="sans-serif" font-weight="900" font-size="11" text-anchor="middle" letter-spacing="2">ISRO</text>
+  </g>
+
+  <!-- Title Badge Overlay -->
+  <rect x="50" y="560" width="360" height="68" rx="8" fill="#0f172a" opacity="0.85" stroke="#334155" stroke-width="1.5"/>
+  <text x="75" y="590" fill="#38bdf8" font-family="sans-serif" font-weight="bold" font-size="12" letter-spacing="2">MARS NEWS · SCIENCE &amp; SPACE</text>
+  <text x="75" y="612" fill="#ffffff" font-family="sans-serif" font-weight="800" font-size="16">ISRO Satellite Launch Mission</text>
+</svg>

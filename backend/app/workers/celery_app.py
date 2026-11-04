@@ -1,0 +1,32 @@
+from celery import Celery
+from app.core.config import settings
+
+celery_app = Celery(
+    "mars_news_worker",
+    broker=settings.CELERY_BROKER_URL,
+    backend=settings.CELERY_RESULT_BACKEND
+)
+
+celery_app.conf.update(
+    task_serializer="json",
+    accept_content=["json"],
+    result_serializer="json",
+    timezone="Asia/Kolkata",
+    enable_utc=True,
+    task_track_started=True,
+    task_time_limit=300,
+    beat_schedule={
+        "collect-breaking-news": {
+            "task": "app.workers.tasks.task_collect_all_news",
+            "schedule": 300.0,  # 5 minutes
+        },
+        "cluster-pending-items": {
+            "task": "app.workers.tasks.task_cluster_items",
+            "schedule": 180.0,  # 3 minutes
+        },
+        "publish-ready-stories": {
+            "task": "app.workers.tasks.task_publish_stories",
+            "schedule": 300.0,  # 5 minutes
+        }
+    }
+)

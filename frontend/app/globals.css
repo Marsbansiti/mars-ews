@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+
+  body {
+    @apply bg-[#fbfbfb] text-zinc-900 antialiased font-sans;
+  }
+}
+
+.newspaper-rule {
+  border-top: 1px solid #e4e4e7;
+  border-bottom: 3px double #18181b;
+  height: 5px;
+}
+
+.newspaper-single-rule {
+  border-top: 1px solid #d4d4d8;
+}
+
+@keyframes ticker {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-ticker {
+  display: inline-block;
+  white-space: nowrap;
+  animation: ticker 35s linear infinite;
+}
+
+.animate-ticker:hover {
+  animation-play-state: paused;
+}
