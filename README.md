@@ -1,5 +1,12 @@
 # MARS NEWS — AI-Powered Automated Indian Digital Newspaper & Newsroom
 
+[![CI Pipeline](https://github.com/Marsbansiti/mars-ews/actions/workflows/ci.yml/badge.svg)](https://github.com/Marsbansiti/mars-ews/actions/workflows/ci.yml)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688?logo=fastapi&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-blue)
+
 **MARS NEWS** is a production-grade, automated digital newspaper and news intelligence platform built for the Indian media ecosystem. It continuously monitors authorized public feeds from major Indian dailies, regional media, and government agencies, deduplicates and clusters multi-source stories, uses OpenAI structured outputs to draft original journalistic summaries, validates factual claims against verified sources, manages editorial risk with automatic hold gates, and publishes eligible articles to a modern public newspaper while giving editors an advanced administrative newsroom dashboard.
 
 ---
